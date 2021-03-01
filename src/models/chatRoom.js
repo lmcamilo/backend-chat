@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       name: DataTypes.STRING,
-      idUser: {
+      userId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
-        field: 'id_user',
+        field: 'user_id',
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
 
   ChatRoom.associate = function associate(models) {
     models.ChatRoom.belongsTo(models.User, {
-      foreignKey: 'idUser',
+      foreignKey: 'userId',
     });
   };
 
