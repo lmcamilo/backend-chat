@@ -15,6 +15,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         field: 'user_id',
       },
+      createdBy: {
+        type: DataTypes.INTEGER,
+        field: 'created_by_user_id',
+      },
+      updatedBy: {
+        type: DataTypes.INTEGER,
+        field: 'updated_by_user_id',
+      },
       createdAt: {
         type: DataTypes.DATE,
         field: 'created_at',
