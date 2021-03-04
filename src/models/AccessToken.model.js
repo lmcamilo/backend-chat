@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     'AccessToken',
     {
       userId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         field: 'user_id',
       },
       token: DataTypes.STRING,

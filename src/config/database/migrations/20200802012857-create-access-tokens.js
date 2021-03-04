@@ -3,12 +3,12 @@ module.exports = {
     return queryInterface.createTable('access_tokens', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        defaultValue: Sequelize.literal('uuid_generate_v4()'),
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
       },
       user_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
