@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         field: 'sent_by',
       },
       idChat: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         field: 'chat_id',
       },
       messageContent: {

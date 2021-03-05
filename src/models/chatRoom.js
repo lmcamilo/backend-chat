@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
 
   ChatRoom.associate = function associate(models) {
     models.ChatRoom.belongsTo(models.User, {
-      foreignKey: 'idUser',
+      foreignKey: 'userId',
     });
     models.ChatRoom.belongsTo(models.User, {
       foreignKey: 'createdBy',
