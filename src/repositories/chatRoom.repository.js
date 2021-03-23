@@ -2,8 +2,7 @@ const { ChatRoom } = require('../models');
 
 module.exports = {
   list: (query) => ChatRoom.findAndCountAll(query),
-  findByPk: (id) => ChatRoom.findByPk(id),
-  get: (args) => ChatRoom.findOne(args),
+  findById: (id) => ChatRoom.findByPk(id),
+  get: (params) => ChatRoom.findOne({ where: params }),
   create: (params) => ChatRoom.create(params),
-  addUser: (user) => ChatRoom.addUser(user),
 };
