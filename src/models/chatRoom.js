@@ -11,16 +11,15 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       userId: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         field: 'user_id',
       },
       createdBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         field: 'created_by_user_id',
       },
       updatedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         field: 'updated_by_user_id',
       },
       createdAt: {

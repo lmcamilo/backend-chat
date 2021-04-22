@@ -9,7 +9,7 @@ const db = {};
 
 const sequelize = new Sequelize(config.database, config.username, config.password, {
   ...config,
-  logging: false,
+  logging: true,
 });
 
 fs.readdirSync(__dirname)

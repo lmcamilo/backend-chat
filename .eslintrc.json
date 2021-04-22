@@ -51,6 +51,7 @@
     "func-names": "off",
     "consistent-return": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
     "security/detect-object-injection": "off",
     "security/detect-non-literal-fs-filename": "off",
     "no-unused-vars": [

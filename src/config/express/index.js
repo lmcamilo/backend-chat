@@ -1,11 +1,15 @@
 const express = require('express');
+
+const app = express();
+const server = require('http').Server(app);
+
 const helmet = require('helmet');
 const xss = require('xss-clean');
 const cors = require('cors');
 const swagger = require('swagger-ui-express');
 const { StatusCodes } = require('http-status-codes');
+const { chat } = require('../socket');
 require('dotenv').config();
-
 const routes = require('../../routes');
 const swaggerDocs = require('../swagger/swagger.json');
 const { errorTracker, errorHandler } = require('../../middlewares');
@@ -14,8 +18,6 @@ const { messages } = require('../../helpers');
 
 const { port, version, corsOptions } = require('../env');
 
-const app = express();
-
 app.set('port', port || 3000);
 
 if (process.env.NODE_ENV !== 'test') {
@@ -23,6 +25,9 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan.errorHandler);
 }
 
+console.log('SERVER', server);
+
+chat.connect(server);
 app.use(helmet());
 app.use(cors(corsOptions));
 app.use(express.json());

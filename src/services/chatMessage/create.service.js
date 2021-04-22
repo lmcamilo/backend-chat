@@ -4,10 +4,10 @@ module.exports = {
   create: async (params) => {
     const message = await chatMessageRepository.create({
       ...params,
-      sentBy: params.idUser,
+      sentBy: params.sentBy,
       read: false,
-      updatedBy: params.idUser,
-      createdBy: params.idUser,
+      updatedBy: params.sentBy,
+      createdBy: params.sentBy,
     });
 
     return message;
